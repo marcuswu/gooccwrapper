@@ -4,8 +4,8 @@ package brepbuilderapi
 // #include <occwrapper/brep_builder.h>
 import "C"
 import (
-	"github.com/marcuswu/gooccwrapper/pkg/geom"
-	"github.com/marcuswu/gooccwrapper/pkg/topods"
+	"github.com/marcuswu/gooccwrapper/geom"
+	"github.com/marcuswu/gooccwrapper/topods"
 )
 
 type MakeEdge struct {
