@@ -3,7 +3,7 @@ package stlapi
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/stlapi_writer.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type Writer struct {
 	Writer C.StlAPIWriter

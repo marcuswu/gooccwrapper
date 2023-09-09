@@ -3,7 +3,7 @@ package geom
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/geom_curve.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/gp"
+import "github.com/marcuswu/gooccwrapper/gp"
 
 type Curve struct {
 	Curve C.GeomCurve

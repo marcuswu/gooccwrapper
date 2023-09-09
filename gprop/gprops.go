@@ -3,7 +3,7 @@ package gprop
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/gprop.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/gp"
+import "github.com/marcuswu/gooccwrapper/gp"
 
 type GProps struct {
 	Props C.GPropGProps

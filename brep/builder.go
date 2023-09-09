@@ -3,7 +3,7 @@ package brep
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/brep_builder.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type Builder struct {
 	builder C.BRepBuilder

@@ -3,7 +3,7 @@ package stepcontrol
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/stepcontrol_writer.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type StepModelType int
 

@@ -3,7 +3,7 @@ package toptools
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/toptools_listofshape.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type ListOfShape struct {
 	List C.TopToolsListOfShape

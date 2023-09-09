@@ -3,7 +3,7 @@ package topexp
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/topexp_explorer.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type ShapeEnum int
 

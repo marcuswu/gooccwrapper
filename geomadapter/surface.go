@@ -3,7 +3,7 @@ package geomadapter
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/geom_adapter.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/geom"
+import "github.com/marcuswu/gooccwrapper/geom"
 
 type Surface struct {
 	Surface C.GeomAdapterSurface

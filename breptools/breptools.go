@@ -4,7 +4,7 @@ package breptools
 // #include <occwrapper/breptools.h>
 import "C"
 import (
-	"github.com/marcuswu/gooccwrapper/pkg/topods"
+	"github.com/marcuswu/gooccwrapper/topods"
 )
 
 func UVBounds(face topods.Face) (float64, float64, float64, float64) {

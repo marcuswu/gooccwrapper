@@ -4,9 +4,9 @@ package breptool
 // #include <occwrapper/brep_tool.h>
 import "C"
 import (
-	"github.com/marcuswu/gooccwrapper/pkg/geom"
-	"github.com/marcuswu/gooccwrapper/pkg/gp"
-	"github.com/marcuswu/gooccwrapper/pkg/topods"
+	"github.com/marcuswu/gooccwrapper/geom"
+	"github.com/marcuswu/gooccwrapper/gp"
+	"github.com/marcuswu/gooccwrapper/topods"
 )
 
 func Surface(ref topods.Face) geom.Surface {

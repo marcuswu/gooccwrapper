@@ -3,7 +3,7 @@ package brepmesh
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/brepmesh.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type IncrementalMesh struct {
 	IncrementalMesh C.BRepMeshIncrementalMesh

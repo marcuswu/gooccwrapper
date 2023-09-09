@@ -4,9 +4,9 @@ package brepadapter
 // #include <occwrapper/brep_adapter.h>
 import "C"
 import (
-	"github.com/marcuswu/gooccwrapper/pkg/geomabs"
-	"github.com/marcuswu/gooccwrapper/pkg/gp"
-	"github.com/marcuswu/gooccwrapper/pkg/topods"
+	"github.com/marcuswu/gooccwrapper/geomabs"
+	"github.com/marcuswu/gooccwrapper/gp"
+	"github.com/marcuswu/gooccwrapper/topods"
 )
 
 type Surface struct {

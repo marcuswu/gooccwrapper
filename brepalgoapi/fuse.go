@@ -3,7 +3,7 @@ package brepalgoapi
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/brepalgoapi.h>
 import "C"
-import "github.com/marcuswu/gooccwrapper/pkg/topods"
+import "github.com/marcuswu/gooccwrapper/topods"
 
 type Fuse struct {
 	fuse C.BRepAlgoAPIFuse

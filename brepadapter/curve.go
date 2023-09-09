@@ -5,8 +5,8 @@ package brepadapter
 // #include <occwrapper/occ_types.h>
 import "C"
 import (
-	"github.com/marcuswu/gooccwrapper/pkg/gp"
-	"github.com/marcuswu/gooccwrapper/pkg/topods"
+	"github.com/marcuswu/gooccwrapper/gp"
+	"github.com/marcuswu/gooccwrapper/topods"
 )
 
 type Curve struct {
