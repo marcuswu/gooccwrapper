@@ -27,3 +27,7 @@ func (a Ax3) YDirection() Dir {
 func (a Ax3) Direction() Dir {
 	return Dir{C.gpAx3_Direction(a.ax3)}
 }
+
+func (a Ax3) Location() Pnt {
+	return Pnt{C.gpAx3_Location(a.ax3)}
+}
