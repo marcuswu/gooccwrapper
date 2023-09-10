@@ -35,3 +35,7 @@ func (a Ax3) Location() Pnt {
 func (a Ax3) Rotate(axis Ax1, angle float64) {
 	C.gpAx3_Rotate(a.ax3, axis, angle)
 }
+
+func (a Ax3) Translated(vec Vec) Ax3 {
+	return Ax3{C.gpAx3_Translated(a.ax3, vec)}
+}
