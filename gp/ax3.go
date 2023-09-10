@@ -31,3 +31,7 @@ func (a Ax3) Direction() Dir {
 func (a Ax3) Location() Pnt {
 	return Pnt{C.gpAx3_Location(a.ax3)}
 }
+
+func (a Ax3) Rotate(axis Ax1, angle float64) {
+	C.gpAx3_Rotate(a.ax3, axis, angle)
+}
