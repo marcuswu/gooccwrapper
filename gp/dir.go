@@ -25,3 +25,16 @@ func NewDirFromRef(ref GPDir) Dir {
 func (d Dir) Free() {
 	C.gpDir_Free(d.dir)
 }
+
+func (d Dir) X() float64 {
+	return C.gpDir_X(d.Dir)
+}
+
+func (d Dir) Y() float64 {
+	return C.gpDir_Y(d.Dir)
+}
+
+func (d Dir) Z() float64 {
+	return C.gpDir_Z(d.Dir)
+}
+

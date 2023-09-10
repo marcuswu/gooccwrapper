@@ -39,3 +39,16 @@ func (v Vec) Normalized() Vec {
 func (v Vec) Magnitude() float64 {
 	return float64(C.gpVec_Magnitude(v.Vec))
 }
+
+func (v Vec) X() float64 {
+	return C.gpVec_X(v.Vec)
+}
+
+func (v Vec) Y() float64 {
+	return C.gpVec_Y(v.Vec)
+}
+
+func (v Vec) Z() float64 {
+	return C.gpVec_Z(v.Vec)
+}
+
