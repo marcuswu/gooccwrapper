@@ -1,3 +1,3 @@
-module github.com/marcuswu/gooccwrapper v0.0.1
+module github.com/marcuswu/gooccwrapper
 
 go 1.21
