@@ -23,6 +23,10 @@ func (me MakeWire) AddEdge(edge topods.Edge) {
 	C.BRepBuilderAPIMakeWire_AddEdge(me.makeWire, C.TopoDSEdge(edge.Edge))
 }
 
+func (me MakeWire) AddWire(wire topods.Wire) {
+	C.BRepBuilderAPIMakeWire_AddWire(me.makeWire, C.TopoDSWire(wire.Wire))
+}
+
 func (me MakeWire) ToTopoDSWire() topods.Wire {
 	return topods.NewWireFromRef(topods.TopoDSWire(C.BRepBuilderAPIMakeWire_ToTopoDSWire(me.makeWire)))
 }
