@@ -27,14 +27,14 @@ func (d Dir) Free() {
 }
 
 func (d Dir) X() float64 {
-	return C.gpDir_X(d.Dir)
+	return float64(C.gpDir_X(d.Dir))
 }
 
 func (d Dir) Y() float64 {
-	return C.gpDir_Y(d.Dir)
+	return float64(C.gpDir_Y(d.Dir))
 }
 
 func (d Dir) Z() float64 {
-	return C.gpDir_Z(d.Dir)
+	return float64(C.gpDir_Z(d.Dir))
 }
 
