@@ -10,7 +10,7 @@ type Curve struct {
 }
 
 func MakeCircle(center gp.Pnt, radius float64) Curve {
-	return Curve{C.gcCircle_ToGeomCurve(C.gcMakeCircle(C.gpPnt(center.Pnt), C.double(radius)))}
+	return Curve{C.gcTrimmedCurve_ToGeomCurve(C.gcMakeCircle(C.gpPnt(center.Pnt), C.double(radius)))}
 }
 
 func (c Curve) Free() {
