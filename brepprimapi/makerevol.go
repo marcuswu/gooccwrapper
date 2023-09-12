@@ -20,6 +20,10 @@ func NewMakeRevol(face topods.Face, axis gp.Ax1, degrees float64) MakeRevol {
 	)}
 }
 
+func (mp MakeRevol) Shape() Shape {
+	return Shape{C.BrepPrimAPIMakeRevol_Shape(mr.makeRevol)}
+}
+
 func (mr MakeRevol) Free() {
 	C.BRepPrimAPIMakeRevol_Free(mr.makeRevol)
 }
