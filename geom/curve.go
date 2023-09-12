@@ -10,11 +10,11 @@ type Curve struct {
 }
 
 func MakeCircle(center gp.Pnt, radius float64) Curve {
-	return Curve{C.gcCircle_ToGeomCurve(C.gcMakeCircle(C.gpPnt(center.Pnt), C.double(radius)).Value().Circ())}
+	return Curve{C.gcCircle_ToGeomCurve(C.gcMakeCircle(C.gpPnt(center.Pnt), C.double(radius)))}
 }
 
 func (c Curve) Free() {
-	C.gcCircle_Free(C.gcCircle(c.Curve))
+	C.gcTrimmedCurve_Free(C.gcTrimmedCurve(c.Curve))
 }
 
 func MakeArc(circle gp.Circ, pt1 gp.Pnt, pt2 gp.Pnt, sense bool) Curve {
