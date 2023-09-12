@@ -22,3 +22,7 @@ func (c Cut) Shape() topods.Shape {
 		C.BRepAlgoAPIBooleanOperation_Shape(C.BRepAlgoAPIBooleanOperation(c.cut)),
 	))
 }
+
+func (c Cut) ToBooleanOperation() Boolean {
+	return Boolean{C.BRepAlgoAPICut_ToBooleanOperation(c.cut)}
+}

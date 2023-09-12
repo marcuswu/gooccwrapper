@@ -22,3 +22,7 @@ func (f Fuse) Shape() topods.Shape {
 		C.BRepAlgoAPIBooleanOperation_Shape(C.BRepAlgoAPIBooleanOperation(f.fuse)),
 	))
 }
+
+func (f Fuse) ToBooleanOperation() Boolean {
+	return Boolean{C.BRepAlgoAPIFuse_ToBooleanOperation(f.fuse)}
+}
