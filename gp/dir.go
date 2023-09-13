@@ -38,3 +38,7 @@ func (d Dir) Z() float64 {
 	return float64(C.gpDir_Z(d.dir))
 }
 
+func (d Dir) IsParallel(other Dir) bool {
+	return bool(d.IsParallel(other))
+}
+
