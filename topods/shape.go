@@ -14,6 +14,10 @@ func NewShapeFromRef(ref TopoDSShape) Shape {
 	return Shape{C.TopoDSShape(ref)}
 }
 
+func (s Shape) IsEqual(other TopoDSShape) bool {
+	return bool(C.TopoDSShape_IsEqual(s.Shape, other.Shape))
+}
+
 func (s Shape) Free() {
 	C.TopoDSShape_Free(s.Shape)
 }
