@@ -26,6 +26,10 @@ func (l ListOfShape) Append(shape topods.Shape) topods.Shape {
 	return shape
 }
 
+func (l ListOfShape) AppendList(other ListOfShape) {
+	C.TopToolsListOfShape_AppendList(l.List, other.List)
+}
+
 func (l ListOfShape) Extent() int {
 	return int(C.TopToolsListOfShape_Extent(l.List))
 }
