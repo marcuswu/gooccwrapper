@@ -19,10 +19,10 @@ func NewMakePrism(face topods.Face, vec gp.Vec) MakePrism {
 	)}
 }
 
-func (mp MakePrism) Shape() Shape {
-	return Shape{C.BrepPrimAPIMakePrism_Shape(mr.makePrism)}
+func (mp MakePrism) Shape() topods.Shape {
+	return topods.NewShapeFromRef(topods.TopoDSShape(C.BRepPrimAPIMakePrism_Shape(mp.makePrism)))
 }
 
 func (mp MakePrism) Free() {
-	C.BRepPrimAPIMakePrism_Free(mr.makePrism)
+	C.BRepPrimAPIMakePrism_Free(mp.makePrism)
 }

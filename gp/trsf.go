@@ -4,12 +4,18 @@ package gp
 // #include <occwrapper/gp_trsf.h>
 import "C"
 
+type GPTrsf C.gpTrsf
+
 type Trsf struct {
 	trsf C.gpTrsf
 }
 
 func NewTrsf() Trsf {
 	return Trsf{C.gpTrsf_Init()}
+}
+
+func NewTrsfFromRef(ref GPTrsf) Trsf {
+	return Trsf{C.gpTrsf(ref)}
 }
 
 func (t Trsf) SetTransformation(from Ax3, to Ax3) {
