@@ -52,3 +52,6 @@ func (v Vec) Z() float64 {
 	return float64(C.gpVec_Z(v.Vec))
 }
 
+func (v Vec) IsEqual(other Vec) bool {
+	return bool(C.gpVec_IsEqual(v.Vec, other.Vec))
+}
