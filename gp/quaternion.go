@@ -20,6 +20,10 @@ func (q Quaternion) RotationAngle() float64 {
 	return float64(C.gpQuaternion_GetRotationAngle(q.quaternion))
 }
 
+func (q Quaternion) IsEqual(o Quaternion) bool {
+	return bool(C.gpQuaternion_IsEqual(q.quaternion, o.quaternion))
+}
+
 func (q Quaternion) Free() {
 	C.gpQuaternion_Free(q.quaternion)
 }
