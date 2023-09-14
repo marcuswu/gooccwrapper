@@ -34,8 +34,8 @@ func (p Pln) Position() Ax3 {
 	return Ax3{C.gpPln_Position(p.pln)}
 }
 
-func (p Pln) ContainsPoint(point Pnt, tolerance float64) bool {
-	return bool(C.gpPln_ContainsPoint(p.pln, point.Pnt, C.double(tolerance)))
+func (p Pln) ContainsPoint(point Pnt) bool {
+	return bool(C.gpPln_ContainsPoint(p.pln, point.Pnt))
 }
 
 func (p Pln) Free() {
