@@ -5,8 +5,14 @@ package toploc
 import "C"
 import "github.com/marcuswu/gooccwrapper/gp"
 
+type TopLocLocation C.TopLocLocation
+
 type Location struct {
 	loc C.TopLocLocation
+}
+
+func NewLocationFromRef(ref TopLocLocation) Location {
+	return Location{C.TopLocLocation(ref)}
 }
 
 func (l Location) Transformation() gp.Trsf {
