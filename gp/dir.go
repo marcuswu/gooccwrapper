@@ -39,6 +39,9 @@ func (d Dir) Z() float64 {
 }
 
 func (d Dir) IsParallel(other Dir) bool {
-	return bool(d.IsParallel(other))
+	return bool(C.gpDir_IsParallel(d.dir, other.dir))
 }
 
+func (d Dir) Dot(other Dir) float64 {
+	return float64(C.gpDir_Dot(d.dir, other.dir))
+}
