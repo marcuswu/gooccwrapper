@@ -13,8 +13,8 @@ func NewWriter() Writer {
 	return Writer{C.StlAPIWriter_Init()}
 }
 
-func (w Writer) Write(res topods.Compound, filename string) int {
-	return int(C.StlAPIWriter_Write(w.Writer, C.TopoDSCompound(res.Compound), C.CString(filename)))
+func (w Writer) Write(res topods.Compound, filename string) bool {
+	return bool(C.StlAPIWriter_Write(w.Writer, C.TopoDSCompound(res.Compound), C.CString(filename)))
 }
 
 func (w Writer) Free() {
