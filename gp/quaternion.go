@@ -1,6 +1,6 @@
 package gp
 
-// #cgo LDFLAGS: -loccwrapper
+// #cgo LDFLAGS: -L /usr/local/include -loccwrapper
 // #include <occwrapper/gp_quaternion.h>
 import "C"
 
