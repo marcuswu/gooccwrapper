@@ -10,7 +10,7 @@ type IncrementalMesh struct {
 }
 
 func NewIncrementalMesh(
-	shape topods.Shape,
+	shape topods.Compound,
 	linearDefl float64,
 	isRelative bool,
 	angularDefl float64,
