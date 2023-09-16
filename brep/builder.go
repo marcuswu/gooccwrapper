@@ -18,7 +18,7 @@ func (b Builder) MakeCompound(res topods.Compound) {
 }
 
 func (b Builder) Add(res topods.Compound, shape topods.Shape) {
-	C.BRepBuilder_Add(b.builder, C.TopoDSShape(res.Shape), C.TopoDSShape(shape.Shape))
+	C.BRepBuilder_Add(b.builder, C.TopoDSShape(res.Compound), C.TopoDSShape(shape.Shape))
 }
 
 func (b Builder) Free() {

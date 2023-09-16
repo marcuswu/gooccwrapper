@@ -17,7 +17,7 @@ func NewIncrementalMesh(
 	isParallel bool,
 ) IncrementalMesh {
 	return IncrementalMesh{C.BRepMeshIncrementalMesh_Init(
-		C.TopoDSShape(shape.Shape),
+		C.TopoDSShape(shape.Compound),
 		C.double(linearDefl),
 		C.bool(isRelative),
 		C.double(angularDefl),
