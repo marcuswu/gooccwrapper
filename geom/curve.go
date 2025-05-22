@@ -2,6 +2,7 @@ package geom
 
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/geom_curve.h>
+// #include <occwrapper/gp_ax2.h>
 import "C"
 import "github.com/marcuswu/gooccwrapper/gp"
 
@@ -9,8 +10,8 @@ type Curve struct {
 	Curve C.GeomCurve
 }
 
-func MakeCircle(center gp.Pnt, radius float64) Curve {
-	return Curve{C.gcTrimmedCurve_ToGeomCurve(C.gcMakeCircle(C.gpPnt(center.Pnt), C.double(radius)))}
+func MakeCircle(center gp.Ax2, radius float64) Curve {
+	return Curve{C.gcTrimmedCurve_ToGeomCurve(C.gcMakeCircle(C.gpAx2(center.Ax2), C.double(radius)))}
 }
 
 func (c Curve) Free() {
