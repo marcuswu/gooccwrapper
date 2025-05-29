@@ -28,6 +28,10 @@ func (v Vec) Multiplied(dist float64) Vec {
 	return Vec{C.gpVec_Multiplied(v.Vec, C.double(dist))}
 }
 
+func (v Vec) Dot(other Vec) float64 {
+	return float64(C.gpVec_Dot(v.Vec, other.Vec))
+}
+
 func (v Vec) Crossed(other Vec) Vec {
 	return Vec{C.gpVec_Crossed(v.Vec, other.Vec)}
 }
