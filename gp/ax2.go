@@ -8,8 +8,8 @@ type Ax2 struct {
 	Ax2 C.gpAx2
 }
 
-func NewAx2(origin Pnt, dir Dir) Ax2 {
-	return Ax2{C.gpAx2_Init(origin.Pnt, dir.dir)}
+func NewAx2(origin Pnt, normal Dir, xAxis Dir) Ax2 {
+	return Ax2{C.gpAx2_Init(origin.Pnt, normal.dir, xAxis.dir)}
 }
 
 func (a Ax2) Free() {
