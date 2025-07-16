@@ -7,7 +7,7 @@ import "C"
 type GPTrsf C.gpTrsf
 
 type Trsf struct {
-	trsf C.gpTrsf
+	Trsf C.gpTrsf
 }
 
 func NewTrsf() Trsf {
@@ -19,13 +19,21 @@ func NewTrsfFromRef(ref GPTrsf) Trsf {
 }
 
 func (t Trsf) Rotation() Quaternion {
-	return Quaternion{C.gpTrsf_GetRotation(t.trsf)}
+	return Quaternion{C.gpTrsf_GetRotation(t.Trsf)}
 }
 
 func (t Trsf) SetTransformation(from Ax3, to Ax3) {
-	C.gpTrsf_SetTransformation(t.trsf, from.ax3, to.ax3)
+	C.gpTrsf_SetTransformation(t.Trsf, from.ax3, to.ax3)
+}
+
+func (t Trsf) SetRotation(axis Ax1, radians float64) {
+	C.gpTrsf_SetRotation(t.Trsf, axis.Ax1, C.double(radians))
+}
+
+func (t Trsf) SetTranslation(vec Vec) {
+	C.gpTrsf_SetTranslation(t.Trsf, vec.Vec)
 }
 
 func (t Trsf) Free() {
-	C.gpTrsf_Free(t.trsf)
+	C.gpTrsf_Free(t.Trsf)
 }

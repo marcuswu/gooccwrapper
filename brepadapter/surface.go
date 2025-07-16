@@ -21,6 +21,10 @@ func NewSurfaceRestriction(face topods.Face, restriction bool) Surface {
 	return Surface{C.BRepAdapterSurface_InitRestriction(C.TopoDSFace(face.Face), C.bool(restriction))}
 }
 
+func (s Surface) Direction() gp.Dir {
+	return gp.NewDirFromRef(gp.GPDir(C.BRepAdapterSurface_Direction(s.surf)))
+}
+
 func (s Surface) Plane() gp.Pln {
 	return gp.NewPlnFromRef(gp.GPPln(C.BRepAdapterSurface_Plane(s.surf)))
 }

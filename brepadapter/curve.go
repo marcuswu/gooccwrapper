@@ -10,7 +10,7 @@ import (
 )
 
 type Curve struct {
-	curve C.BRepAdapterCurve
+	Curve C.BRepAdapterCurve
 }
 
 func NewCurve(edge topods.Edge) Curve {
@@ -18,17 +18,17 @@ func NewCurve(edge topods.Edge) Curve {
 }
 
 func (c Curve) IsLine() bool {
-	return bool(C.BRepAdapterCurve_IsLine(c.curve))
+	return bool(C.BRepAdapterCurve_IsLine(c.Curve))
 }
 
 func (c Curve) IsCircle() bool {
-	return bool(C.BRepAdapterCurve_IsCircle(c.curve))
+	return bool(C.BRepAdapterCurve_IsCircle(c.Curve))
 }
 
 func (c Curve) IsEllipse() bool {
-	return bool(C.BRepAdapterCurve_IsEllipse(c.curve))
+	return bool(C.BRepAdapterCurve_IsEllipse(c.Curve))
 }
 
 func (c Curve) ToCircle() gp.Circ {
-	return gp.NewCircFromRef(gp.GPCirc(C.BRepAdapterCurve_ToCircle(c.curve)))
+	return gp.NewCircFromRef(gp.GPCirc(C.BRepAdapterCurve_ToCircle(c.Curve)))
 }

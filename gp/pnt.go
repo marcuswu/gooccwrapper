@@ -2,6 +2,7 @@ package gp
 
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/gp_pnt.h>
+// #include <occwrapper/occutils.h>
 import "C"
 
 type GPPnt C.gpPnt
@@ -18,6 +19,10 @@ func NewPnt(x float64, y float64, z float64) Pnt {
 
 func NewPntFromRef(ref GPPnt) Pnt {
 	return Pnt{C.gpPnt(ref)}
+}
+
+func NewMidPnt(p1 Pnt, p2 Pnt) Pnt {
+	return Pnt{C.gpPnt_Midpoint(p1.Pnt, p2.Pnt)}
 }
 
 func (p Pnt) Free() {
@@ -97,11 +102,11 @@ func (p Pnt) Scaled(other Pnt, scale float64) Pnt {
 }
 
 func (p Pnt) Transform(trans Trsf) {
-	C.gpPnt_Transform(p.Pnt, trans.trsf)
+	C.gpPnt_Transform(p.Pnt, trans.Trsf)
 }
 
 func (p Pnt) Transformed(trans Trsf) Pnt {
-	return Pnt{C.gpPnt_Transformed(p.Pnt, trans.trsf)}
+	return Pnt{C.gpPnt_Transformed(p.Pnt, trans.Trsf)}
 }
 
 func (p Pnt) Translate(vector Vec) {
