@@ -3,6 +3,7 @@ package gp
 // #cgo LDFLAGS: -loccwrapper
 // #include <occwrapper/gp_dir.h>
 import "C"
+import "fmt"
 
 type GPDir C.gpDir
 
@@ -48,4 +49,8 @@ func (d Dir) IsParallel(other Dir) bool {
 
 func (d Dir) Dot(other Dir) float64 {
 	return float64(C.gpDir_Dot(d.dir, other.dir))
+}
+
+func (d Dir) String() string {
+	return fmt.Sprintf("Dir: %f, %f, %f", d.X(), d.Y(), d.Z())
 }

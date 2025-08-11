@@ -4,6 +4,7 @@ package gp
 // #include <occwrapper/gp_pnt.h>
 // #include <occwrapper/occutils.h>
 import "C"
+import "fmt"
 
 type GPPnt C.gpPnt
 
@@ -123,4 +124,8 @@ func (p Pnt) TranslatePoints(pnt1 Pnt, pnt2 Pnt) {
 
 func (p Pnt) TranslatedPoints(pnt1 Pnt, pnt2 Pnt) Pnt {
 	return Pnt{C.gpPnt_TranslatedPoints(p.Pnt, pnt1.Pnt, pnt2.Pnt)}
+}
+
+func (p Pnt) String() string {
+	return fmt.Sprintf("Point: %f, %f, %f", p.X(), p.Y(), p.Z())
 }
