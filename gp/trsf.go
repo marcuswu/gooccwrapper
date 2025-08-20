@@ -34,6 +34,14 @@ func (t Trsf) SetTranslation(vec Vec) {
 	C.gpTrsf_SetTranslation(t.Trsf, vec.Vec)
 }
 
+func (t Trsf) SetMirrorAx1(axis Ax1) {
+	C.gpTrsf_SetMirrorAx1(t.Trsf, axis.Ax1)
+}
+
+func (t Trsf) SetMirrorAx2(axis Ax2) {
+	C.gpTrsf_SetMirrorAx2(t.Trsf, axis.Ax2)
+}
+
 func (t Trsf) Free() {
 	C.gpTrsf_Free(t.Trsf)
 }
